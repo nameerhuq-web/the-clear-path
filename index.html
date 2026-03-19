@@ -79,7 +79,7 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; border-bottom: 2px solid var(--acce
 .card h3 { margin-top: 0; color: var(--accent); font-size: 1.8rem; }
 .tag { font-size: 0.7rem; font-weight: bold; background: #2d2d35; padding: 4px 8px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
 
-/* The Math Section */
+/* Math Section */
 .math-section {
   background: linear-gradient(45deg, #16161a, #23232b);
   padding: 60px;
@@ -90,6 +90,18 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; border-bottom: 2px solid var(--acce
 }
 .comparison { font-size: 2rem; font-weight: 800; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
 .vs { color: var(--accent); font-size: 1.2rem; }
+
+/* Counter Section */
+#drink-counter-section {
+  background: linear-gradient(45deg, #23232b, #16161a);
+  padding: 60px 20px;
+  margin-top: 50px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px dashed var(--accent);
+}
+#drink-counter-section button { margin-top: 20px; }
+#party { font-size: 2rem; margin-top: 20px; }
 
 /* Footer */
 footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid var(--border); }
@@ -111,7 +123,7 @@ footer { padding: 100px 20px; background: #000; text-align: center; border-top: 
     <a href="https://www.google.com/search?q=mental+health+hotline+near+me" target="_blank" class="btn btn-red">
       CANT AFFORD THERAPY? CLICK HERE
     </a>
-    <a href="https://www.google.com/search?q=therapists+near+me&oq=therapists+near+me&gs_lcrp=EgZjaHJvbWUyDggAEEUYORhDGIAEGIoFMg0IARAAGJECGIAEGIoFMg0IAhAAGJECGIAEGIoFMg0IAxAAGJECGIAEGIoFMg0IBBAAGJECGIAEGIoFMg0IBRAAGJECGIAEGIoFMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMjc4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8&zx=1773925691354&no_sw_cr=1" target="_blank" class="btn btn-green">
+    <a href="https://www.google.com/search?q=therapists+near+me&oq=therapists+near+me" target="_blank" class="btn btn-green">
       FIND A THERAPIST INSTEAD OF A BOTTLE
     </a>
   </div>
@@ -171,6 +183,61 @@ footer { padding: 100px 20px; background: #000; text-align: center; border-top: 
     <div>$150 / Month<br>Professional Therapy</div>
   </div>
 </section>
+
+<!-- Interactive Counter Section -->
+<section class="container" id="drink-counter-section">
+  <h2>Global Alcohol Tracker</h2>
+  <p>People who drink alcohol: <span id="drink-counter">3,304,000,000</span></p>
+  <p>People who don’t drink alcohol: <span id="no-drink-counter">4,696,000,000</span></p>
+  <button id="quit-button" class="btn btn-green">I Give It Up!</button>
+  <div id="party" style="display:none;">🎉 Party Time! 🎉</div>
+</section>
+
+<script>
+// Realistic numbers
+let drinkers = 3304000000;
+let nonDrinkers = 4696000000;
+
+// Elements
+const drinkCounter = document.getElementById('drink-counter');
+const noDrinkCounter = document.getElementById('no-drink-counter');
+const quitButton = document.getElementById('quit-button');
+const party = document.getElementById('party');
+
+// Check if user already clicked
+if(localStorage.getItem('hasQuit')) {
+  quitButton.disabled = true;
+  quitButton.innerText = "You already gave it up!";
+}
+
+// Display initial counts
+drinkCounter.innerText = drinkers.toLocaleString();
+noDrinkCounter.innerText = nonDrinkers.toLocaleString();
+
+// Button click handler
+quitButton.addEventListener('click', () => {
+  if(!localStorage.getItem('hasQuit')) {
+    // Update counters
+    drinkers -= 1;
+    nonDrinkers += 1;
+    drinkCounter.innerText = drinkers.toLocaleString();
+    noDrinkCounter.innerText = nonDrinkers.toLocaleString();
+
+    // Show party effect
+    party.style.display = "block";
+    party.style.opacity = 1;
+    setTimeout(() => {
+      party.style.opacity = 0;
+      setTimeout(() => party.style.display = "none", 500);
+    }, 2000);
+
+    // Mark as clicked
+    localStorage.setItem('hasQuit', 'true');
+    quitButton.disabled = true;
+    quitButton.innerText = "Thank you!";
+  }
+});
+</script>
 
 <!-- Footer -->
 <footer>
