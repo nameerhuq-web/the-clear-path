@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE CLEAR PATH | Clarity is a Superpower</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0c;
+  --text: #ffffff;
+  --accent: #00d4ff;
+  --danger: #ff4d4d;
+  --success: #00ff88;
+  --card-bg: #16161a;
+  --border: #2d2d35;
+}
+
+* { box-sizing: border-box; transition: all 0.3s ease; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+header {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: -2px; }
+.slogan { font-size: clamp(1rem, 4vw, 1.5rem); color: var(--accent); font-weight: 300; margin-bottom: 2rem; }
+
+/* Buttons */
+.cta-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+.btn {
+  padding: 18px 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  display: inline-block;
+}
+.btn-red { background: var(--danger); color: white; box-shadow: 0 0 20px rgba(255, 77, 77, 0.4); }
+.btn-green { background: var(--success); color: #000; }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+
+/* Content Grid */
+.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+h2 { font-size: 2.5rem; margin-bottom: 40px; border-bottom: 2px solid var(--accent); display: inline-block; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.card:hover { border-color: var(--accent); }
+.card h3 { margin-top: 0; color: var(--accent); font-size: 1.8rem; }
+.tag { font-size: 0.7rem; font-weight: bold; background: #2d2d35; padding: 4px 8px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
+
+/* The Math Section */
+.math-section {
+  background: linear-gradient(45deg, #16161a, #23232b);
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 50px;
+  border: 2px dashed var(--accent);
+}
+.comparison { font-size: 2rem; font-weight: 800; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+.vs { color: var(--accent); font-size: 1.2rem; }
+
+/* Footer */
+footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid var(--border); }
+.hotline-banner { font-size: 2rem; color: var(--danger); font-weight: 900; margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .comparison { flex-direction: column; gap: 20px; }
+  h2 { font-size: 1.8rem; }
+}
+</style>
+</head>
+
+<body>
+<!-- Hero -->
+<header>
+  <h1>THE CLEAR PATH</h1>
+  <p class="slogan">CLARITY IS A COMPETITIVE ADVANTAGE. FOG IS A CHOICE.</p>
+  <div class="cta-container">
+    <a href="https://www.google.com/search?q=mental+health+hotline+near+me" target="_blank" class="btn btn-red">
+      CANT AFFORD THERAPY? CLICK HERE
+    </a>
+    <a href="https://www.google.com/search?q=therapists+near+me&oq=therapists+near+me&gs_lcrp=EgZjaHJvbWUyDggAEEUYORhDGIAEGIoFMg0IARAAGJECGIAEGIoFMg0IAhAAGJECGIAEGIoFMg0IAxAAGJECGIAEGIoFMg0IBBAAGJECGIAEGIoFMg0IBRAAGJECGIAEGIoFMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMjc4MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8&zx=1773925691354&no_sw_cr=1" target="_blank" class="btn btn-green">
+      FIND A THERAPIST INSTEAD OF A BOTTLE
+    </a>
+  </div>
+</header>
+
+<!-- Case Studies Section -->
+<section class="container">
+  <h2>THE COST OF THE FOG</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="tag">CASE STUDY: LOSS</div>
+      <h3>Avicii</h3>
+      <p>At 22, hospitalized with acute pancreatitis from alcohol. At 28, the world lost a genius. He used wine to mask performance anxiety.</p>
+      <p>"I didn't expect it to be so hard to stop."</p>
+    </div>
+    <div class="card">
+      <div class="tag">CASE STUDY: CLOUDED</div>
+      <h3>Daniel Radcliffe</h3>
+      <p>Filmed the final Harry Potter movies "dead behind the eyes" due to daily drinking. He realized he was becoming a reclusive addict by 20.</p>
+    </div>
+    <div class="card">
+      <div class="tag">CASE STUDY: WASTED</div>
+      <h3>Amy Winehouse</h3>
+      <p>One of the greatest voices in history. Stopped by alcohol poisoning at 27. Her reasoning was drowned by the substance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Clarity Advantages Section -->
+<section class="container">
+  <h2>THE CLARITY ADVANTAGE</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="tag">ELITE REASONING</div>
+      <h3>Cristiano Ronaldo</h3>
+      <p>Zero alcohol. His brain and body stay in peak condition. He chose absolute clarity to become a global titan.</p>
+    </div>
+    <div class="card">
+      <div class="tag">BUSINESS FOCUS</div>
+      <h3>50 Cent</h3>
+      <p>Builds empires. He stays sober to ensure he is never the weakest negotiator in the room. He keeps his edge sharp.</p>
+    </div>
+    <div class="card">
+      <div class="tag">CAREER REBIRTH</div>
+      <h3>Robert Downey Jr.</h3>
+      <p>From uninsurable addict to the highest paid actor in history. 22+ years of sobriety turned him into Iron Man.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Math Section -->
+<section class="math-section">
+  <h2>DO THE MATH</h2>
+  <div class="comparison">
+    <div>$150 / Month<br>Cheap Wine & Hangovers</div>
+    <div class="vs">OR</div>
+    <div>$150 / Month<br>Professional Therapy</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="hotline-banner">Need Help? Call Now!</div>
+  <p>&copy; 2026 THE CLEAR PATH. All rights reserved.</p>
+</footer>
+</body>
+</html>
